@@ -24,7 +24,7 @@ https://github.com/project-openwrt/R4S-OpenWrt/actions
 如果要作用于路由器本身，可以把lan和wan的dns都配置成127.0.0.1，dhcp高级里设置下发dns 6,192.168.1.1(这里取决于你设定的路由的ip地址)
 
 ### 版本信息：
-其他模块版本：SNAPSHOT（当日最新）
+其他模块版本：SNAPSHOT（当日最新）R4S的支援由 @1715173329 完成！
 
 LUCI版本：19.07（当日最新）
 
