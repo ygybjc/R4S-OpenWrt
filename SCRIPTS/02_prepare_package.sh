@@ -1,6 +1,12 @@
 #!/bin/bash
 clear
 
+#R4S
+wget -qO - https://github.com/1715173329/openwrt/commit/26c5a4f855f6dcb0dc94f83f4760f627bed48035.patch | patch -p1
+wget -qO - https://github.com/1715173329/openwrt/commit/3593ddf00cbc4570aec63ccefbe2754a493d76df.patch | patch -p1
+wget -qO - https://github.com/1715173329/openwrt/commit/981073c7572b97e9902996926c91a3396ed89315.patch | patch -p1
+wget -qO - https://github.com/1715173329/openwrt/commit/82d4430958317fcf04eb7dced88c1a141460a576.patch | patch -p1
+
 ##准备工作
 #使用19.07的feed源
 rm -f ./feeds.conf.default
@@ -15,12 +21,8 @@ sed -i 's/Os/O2/g' include/target.mk
 sed -i 's/O2/O2/g' ./rules.mk
 #更新feed
 ./scripts/feeds update -a && ./scripts/feeds install -a
-
-#R4S
-wget -qO - https://github.com/1715173329/openwrt/commit/26c5a4f855f6dcb0dc94f83f4760f627bed48035.patch | patch -p1
-wget -qO - https://github.com/1715173329/openwrt/commit/3593ddf00cbc4570aec63ccefbe2754a493d76df.patch | patch -p1
-wget -qO - https://github.com/1715173329/openwrt/commit/981073c7572b97e9902996926c91a3396ed89315.patch | patch -p1
-wget -qO - https://github.com/1715173329/openwrt/commit/82d4430958317fcf04eb7dced88c1a141460a576.patch | patch -p1
+#irqbalance
+sed -i 's/0/1/g' feeds/packages/utils/irqbalance/files/irqbalance.config
 
 ##必要的patch
 #luci network
