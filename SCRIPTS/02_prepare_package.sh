@@ -6,6 +6,7 @@ wget -qO - https://github.com/1715173329/openwrt/commit/26c5a4f855f6dcb0dc94f83f
 wget -qO - https://github.com/1715173329/openwrt/commit/3593ddf00cbc4570aec63ccefbe2754a493d76df.patch | patch -p1
 wget -qO - https://github.com/1715173329/openwrt/commit/981073c7572b97e9902996926c91a3396ed89315.patch | patch -p1
 wget -qO - https://github.com/1715173329/openwrt/commit/82d4430958317fcf04eb7dced88c1a141460a576.patch | patch -p1
+wget -qO - https://github.com/1715173329/openwrt/commit/c9adfbdd64761ca1c91743fb9bb80e201746fca6.patch | patch -p1
 
 ##准备工作
 #使用19.07的feed源
@@ -60,9 +61,10 @@ popd
 # Patch LuCI 以增添SFE开关
 patch -p1 < ../PATCH/new/package/luci-app-firewall_add_sfe_switch.patch
 # SFE 相关组件
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/new/shortcut-fe
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/fast-classifier package/new/fast-classifier
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/lean/shortcut-fe
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/fast-classifier package/lean/fast-classifier
 cp -f ../PATCH/duplicate/shortcut-fe ./package/base-files/files/etc/init.d
+wget -qO - https://github.com/AmadeusGhost/lede/commit/5e95fd8572d5727ccbfe199efbd5d98297d8643b.patch | patch -p1
 
 ##获取额外package
 #（不用注释这里的任何东西，这不会对提升action的执行速度起到多大的帮助
