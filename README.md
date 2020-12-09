@@ -2,10 +2,10 @@
 ![R4S-OpenWrt-Without-Docker](https://github.com/QiuSimons/R4S-OpenWrt/workflows/R4S-OpenWrt-Without-Docker/badge.svg)
 
 ### 下载地址：
-https://github.com/project-openwrt/R4S-OpenWrt/releases
+https://github.com/QiuSimons/R4S-OpenWrt/releases
 
 ### 追新党可以在Action中取每日更新（可能会翻车，风险自担，需要登陆github后才能下载）：
-https://github.com/project-openwrt/R4S-OpenWrt/actions
+https://github.com/QiuSimons/R4S-OpenWrt/actions
 
 ### Docker版本自行fork，更换Docker版seed，并在自己的Action中自取
 
